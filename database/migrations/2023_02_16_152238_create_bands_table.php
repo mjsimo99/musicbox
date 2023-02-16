@@ -14,12 +14,9 @@ return new class extends Migration
         Schema::create('bands', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image');
-            $table->string('country');
-            $table->date('creation_date');
+            $table->string('genre');
             $table->timestamps();
         });
-        
     }
 
     /**

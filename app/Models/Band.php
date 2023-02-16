@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Band extends Model
 {
     use HasFactory;
+    protected $table = 'bands';
+    protected $primaryKey = 'id';
+    protected $fillable = ['name', 'genre'];
 }
