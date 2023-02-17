@@ -48,6 +48,8 @@ class BandController extends Controller
     public function show(string $id)
     {
         //
+        $bands = Band::find($id);
+        return view('bands.show')->with('bands', $bands);
     }
 
     /**
@@ -56,6 +58,8 @@ class BandController extends Controller
     public function edit(string $id)
     {
         //
+        $bands = Band::find($id);
+        return view('bands.edit')->with('bands', $bands);
     }
 
     /**

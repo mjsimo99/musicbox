@@ -37,7 +37,7 @@
                             <tbody>
                                 @foreach($bands as $band)
                                     <tr class="text-center">
-                                        <td>{{ $band->id }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $band->name }}</td>
                                         <td>{{ $band->genre }}</td>
                                         {{-- <td>
