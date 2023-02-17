@@ -14,19 +14,7 @@ use App\Http\Controllers\BandController;
 */
 
 Route::get('/', function () {
-    return view('dashboard.layouts.layout');
+    return view('welcome');
 });
-Route::get('/add', function () {
-    return view('add');
-});
-
-
-
-
-
-// Route::resource('bands', 'BandsController');
-// Route::post('/bands', 'BandController@store');
-
-
-// Route::resource("/bands", BandController::class);
+ 
 Route::resource("/bands", BandController::class);

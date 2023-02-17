@@ -22,25 +22,30 @@ class BandController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): Response
+    public function create()
     {
-        //
+        return view('bands.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+        // * @param \Illuminate\Http\Request $request
+        // * @return \Illuminate\Http\RedirectResponse
+    public function store(Request $request)
     {
         //
-        
+        $input = $request->all();
+        Band::create($input);
+        return redirect('bands')->with('flash_message', 'Band created successfully.');
+
 
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id): Response
+    public function show(string $id)
     {
         //
     }
@@ -48,7 +53,7 @@ class BandController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id): Response
+    public function edit(string $id)
     {
         //
     }
@@ -56,7 +61,7 @@ class BandController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id): RedirectResponse
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -64,7 +69,7 @@ class BandController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id): RedirectResponse
+    public function destroy(string $id)
     {
         //
     }
