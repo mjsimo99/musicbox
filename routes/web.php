@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BandController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +15,11 @@ use App\Http\Controllers\BandController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+Route::get('/contact', function () {
+    return view('contact');
 });
  
 Route::resource("/bands", BandController::class);
+Route::resource("/users", UserController::class);
