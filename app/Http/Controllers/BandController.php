@@ -68,6 +68,10 @@ class BandController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $bands = Band::find($id);
+        $input = $request->all();
+        $bands->update($input);
+        return redirect('bands')->with('flash_message', 'Band updated successfully.');
     }
 
     /**
@@ -76,5 +80,9 @@ class BandController extends Controller
     public function destroy(string $id)
     {
         //
+
+        Band::destroy($id);
+        return redirect('bands')->with('flash_message', 'Band deleted successfully.');
+
     }
 }
