@@ -9,13 +9,15 @@ class Song extends Model
 {
     use HasFactory;
 
+    protected $table = 'songs';
+    protected $primaryKey = 'id';
     protected $fillable = [
         'title',
         'artist',
         'writer',
         'language',
         'release_date',
-        'lyrics',
+        'audio_file',
         'duration',
         'cover_image',
     ];

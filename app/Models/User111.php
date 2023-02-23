@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SongRating extends Model
+class User extends Model
 {
     use HasFactory;
-    protected $table = 'songs_ratings';
+
+    protected $table = 'users';
     protected $primaryKey = 'id';
-    protected $fillable = [
-        'song_id',
-        'user_id',
-        'rating',
-    ];
+    protected $fillable = ['name', 'email', 'password'];
+
+
+
 }
