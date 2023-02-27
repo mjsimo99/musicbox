@@ -14,7 +14,8 @@ class Artist extends Model
         'name',
         'country',
         'birthdate',
-        'image'
+        'image',
+        'about'
     ];
 
 }

@@ -88,18 +88,35 @@ class SongController extends Controller
 
 
 
-    public function like(Request $request, $id)
+//     public function like(Request $request, $id)
+// {
+//     $songRating = new SongRating;
+//     $songRating->song_id = $id;
+//     $songRating->user_id = Auth::id();
+//     $songRating->rating = 1;
+//     $songRating->save();
+    
+//     return redirect()->back();
+// }
+
+
+public function like(Request $request, $id)
 {
-    $songRating = new SongRating;
-    $songRating->song_id = $id;
-    $songRating->user_id = Auth::id();
-    $songRating->rating = 1;
-    $songRating->save();
+    $user_id = Auth::id();
+    $songRating = SongRating::where('song_id', $id)->where('user_id', $user_id)->first();
+    
+    if ($songRating) {
+        $songRating->delete();
+    } else {
+        $songRating = new SongRating;
+        $songRating->song_id = $id;
+        $songRating->user_id = $user_id;
+        $songRating->rating = 1;
+        $songRating->save();
+    }
     
     return redirect()->back();
 }
-
-
 
 }
 

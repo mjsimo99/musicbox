@@ -25,6 +25,7 @@ class ArtistController extends Controller
     public function create()
     {
         //
+        return view('artists.create');
     }
 
     /**
@@ -33,6 +34,16 @@ class ArtistController extends Controller
     public function store(Request $request)
     {
         //
+        $input = $request->all();
+        $filename = time().$request->file('image')->getClientOriginalName();
+        $path = $request->file('image')->storeAs('images', $filename, 'public');
+        $input["image"] = '/storage/'.$path;
+        
+
+
+
+        Artist::create($input);
+        return redirect('artists')->with('flash_message', 'Artist created successfully.');
     }
 
     /**

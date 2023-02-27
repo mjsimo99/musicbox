@@ -92,15 +92,10 @@
         <div>
           @auth
             <div class="relative inline-block">
+              <form method="POST" action="{{ route('logout') }}">
+                @csrf
               <button class="bg-white text-[#2e2e2e] text-xs font-semibold leading-5 tracking-widest uppercase py-[9px] px-[17px] sm:px-[38px] rounded-full hover:scale-105">{{ Auth::user()->name }}</button>
-              <ul class="absolute right-0 mt-[4px] py-2 w-48 bg-white rounded-md shadow-lg z-20">
-                <li>
-                  <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit">Logout</button>
-                  </form>
-                </li>
-              </ul>
+              </form>
             </div>
           @else
             <a href="{{ route('register') }}" class="text-white text-xs font-semibold leading-5 tracking-widest uppercase py-[9px] px-[17px] sm:px-[38px] rounded-full hover:scale-105">Sign Up</a>
