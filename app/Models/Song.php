@@ -21,5 +21,16 @@ class Song extends Model
         'duration',
         'cover_image',
     ];
+
+
+    public function likedBy(User $user)
+{
+    return $this->ratings->where('user_id', $user->id)->where('rating', 1)->count() > 0;
+}
+
+public function ratings()
+{
+    return $this->hasMany(SongRating::class);
+}
     // protected $table = 'songs';
 }

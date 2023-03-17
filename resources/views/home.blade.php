@@ -49,9 +49,10 @@
                           <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
                       </svg>
                   @else
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M8 15.983l-.667-.547C3.333 11.717.002 8.776.002 5.725c0-2.623 2.006-4.477 4.82-4.477 1.573 0 3.277.753 4.178 2.34.9-1.587 2.605-2.34 4.178-2.34 2.815 0 4.82 1.854 4.82 4.477 0 3.05-3.33 6.002-7.331 9.71L8 15.983z"/>
-                      </svg>
+                  {{-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 15.983l-.667-.547C3.333 11.717.002 8.776.002 5.725c0-2.623 2.006-4.477 4.82-4.477 1.573 0 3.277.753 4.178 2.34.9-1.587 2.605-2.34 4.178-2.34 2.815 0 4.82 1.854 4.82 4.477 0 3.05-3.33 6.002-7.331 9.71L8 15.983z"/>
+                </svg> --}}
+                hhhhhhhhhh khdmat
                   @endif
               </button>
             </form>
